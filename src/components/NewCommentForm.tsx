@@ -134,7 +134,9 @@ export const NewCommentForm: React.FC<Props> = ({ onCommentAdd, postId }) => {
             name="email"
             id="comment-author-email"
             placeholder="email@test.com"
-            className="input is-danger"
+            className={classNames('input', { 'is-danger': emailErr })}
+            ref={emailInputRef}
+            onChange={() => setEmailErr(false)}
           />
 
           <span className="icon is-small is-left">
